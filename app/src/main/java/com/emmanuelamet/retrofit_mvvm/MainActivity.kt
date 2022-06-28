@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         setupRecyclerview()
         lifecycleScope.launchWhenCreated {
             binding.progressBar.isVisible = true
-            var response = try{
+            val response = try{
                 RetrofitInstance.api.getTodos()
             }catch(e: IOException){
                 binding.progressBar.isVisible = false
